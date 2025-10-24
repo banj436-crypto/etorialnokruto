@@ -1,0 +1,149 @@
+{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Arial', sans-serif;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #e94560 100%);
+			background-size: 400% 400%;
+			animation: gradientShift 8s ease infinite;
+			overflow: hidden;
+		}
+
+		.glass-card {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(15px);
+			padding: 60px 50px;
+			border-radius: 25px;
+			text-align: center;
+			color: white;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			box-shadow:
+				0 20px 40px rgba(0, 0, 0, 0.2),
+				inset 0 0 60px rgba(255, 255, 255, 0.1);
+			max-width: 500px;
+			width: 90%;
+			transition: transform 0.3s ease;
+		}
+
+		.glass-card:hover {
+			transform: translateY(-10px);
+		}
+
+		h1 {
+			font-size: 3em;
+			margin-bottom: 20px;
+			background: linear-gradient(45deg, #ffffff, #f8b7d8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+		}
+
+		p {
+			font-size: 1.3em;
+			line-height: 1.6;
+			margin-bottom: 15px;
+			opacity: 0.9;
+		}
+
+		.highlight {
+			background: linear-gradient(45deg, #e94560, #f8b7d8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-weight: bold;
+		}
+
+		.decoration {
+			position: absolute;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 50%;
+			animation: float 3s ease-in-out infinite;
+		}
+
+		.decoration:nth-child(1) {
+			top: 10%;
+			left: 10%;
+			width: 80px;
+			height: 80px;
+			animation-delay: 0s;
+		}
+
+		.decoration:nth-child(2) {
+			top: 40%;
+			right: 15%;
+			width: 60px;
+			height: 60px;
+			animation-delay: 2s;
+		}
+
+		.decoration:nth-child(3) {
+			bottom: 10%;
+			left: 15%;
+			width: 100px;
+			height: 100px;
+			animation-delay: 1s;
+		}
+
+		@keyframes gradientShift {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
+		@keyframes float {
+
+			0%,
+			100% {
+				transform: translateY(0px) scale(1);
+				opacity: 0.9;
+			}
+
+			50% {
+				transform: translateY(-20px) scale(1.1);
+				opacity: 0.6;
+			}
+		}
+
+		
+		@media (max-width: 768px) {
+			.glass-card {
+				padding: 40px 30px;
+				margin: 20px;
+			}
+
+			h1 {
+				font-size: 2.5em;
+			}
+
+			p {
+				font-size: 1.1em;
+			}
+		}
+	</style>
+	<div class="decoration"></div>
+	<div class="decoration"></div>
+	<div class="decoration"></div>
+	<div class="glass-card">
+		<h1>Сзади крутой градиент!</h1>
+		<p>Это <span class="highlight">оч круто</span></p>
+		<p>Фон создает плавный градиент от <span class="highlight">темно-синего</span> к
+			<span class="highlight">розовому</span></p>
+		<p>Сзади красивая <span class="highlight">анимация</span> еще
+    <h2>типо пузырьки еще</h2>
+	</div>
